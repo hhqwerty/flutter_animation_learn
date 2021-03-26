@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import "dart:math" as math;
+
+import './widgets/spinning_card.dart';
+
 void main() {
   runApp(MyApp());
 }
@@ -25,12 +27,13 @@ class MyHomePage extends StatefulWidget {
   _MyHomePageState createState() => _MyHomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _MyHomePageState extends State<MyHomePage>
+    with SingleTickerProviderStateMixin<MyHomePage> {
   int _counter = 0;
 
   void _incrementCounter() {
     setState(() {
-      _counter ++;
+      _counter++;
     });
   }
 
@@ -41,17 +44,9 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
-          ],
+        child: SpinningCardWidget(
+          urlFront: 'assets/1_front.png',
+          urlBack: 'assets/1_back.png',
         ),
       ),
       floatingActionButton: FloatingActionButton(

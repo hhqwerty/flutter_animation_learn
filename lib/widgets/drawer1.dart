@@ -4,10 +4,10 @@ import 'package:flutter/widgets.dart';
 /*
  - Blue element is behind yellow element      done
  - Yellow element is getting smaller      done
- - Yellow element is moving to the right
+ - Yellow element is moving to the right   done
  - Transition is smooth
-
  */
+
 
 class Drawer1 extends StatefulWidget {
   @override
@@ -15,6 +15,7 @@ class Drawer1 extends StatefulWidget {
 }
 
 class _Drawer1State extends State<Drawer1> {
+  double translateValue;
   Widget mDrawer = Container(
     color: Colors.blue,
   );
@@ -28,7 +29,9 @@ class _Drawer1State extends State<Drawer1> {
         mDrawer,
         Transform(
             alignment: Alignment.centerLeft,
-            transform: Matrix4.identity()..scale(0.5),
+            transform: Matrix4.identity()
+              ..scale(0.5)
+              ..translate(400),
             child: mBody)
       ],
     );

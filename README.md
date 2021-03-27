@@ -1,4 +1,4 @@
-# learn_animation
+# Learn Animation
 
 A new Flutter project.
 

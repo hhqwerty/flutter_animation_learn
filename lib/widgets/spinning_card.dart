@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'dart:math' as math;
 
@@ -48,7 +47,7 @@ class _SpinningCardWidgetState extends State<SpinningCardWidget>
       onVerticalDragStart: (DragStartDetails dragStartDetails) {
         controller.reset();
         setState(() {
-          verticalDrag = 0.00;
+          verticalDrag = 0;
           setImageSide();
         });
       },
@@ -76,7 +75,7 @@ class _SpinningCardWidgetState extends State<SpinningCardWidget>
           transform: Matrix4.identity()
             ..setEntry(3, 2, 0.001) //3D look
             ..rotateX(verticalDrag / 180 * math.pi),
-          child: Image.asset(isFront ? widget.urlFront : widget.urlBack)),
+          child: Container(padding: EdgeInsets.all(32), child: Image.asset(isFront ? widget.urlFront : widget.urlBack))),
     );
   }
 }

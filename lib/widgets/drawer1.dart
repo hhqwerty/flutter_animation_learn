@@ -3,7 +3,7 @@ import 'package:flutter/widgets.dart';
 
 /*
  - Blue element is behind yellow element      done
- - Yellow element is getting smaller
+ - Yellow element is getting smaller      done
  - Yellow element is moving to the right
  - Transition is smooth
 
@@ -26,7 +26,10 @@ class _Drawer1State extends State<Drawer1> {
       alignment: Alignment.center,
       children: [
         mDrawer,
-        mBody
+        Transform(
+            alignment: Alignment.centerLeft,
+            transform: Matrix4.identity()..scale(0.5),
+            child: mBody)
       ],
     );
   }
